@@ -58,8 +58,17 @@ let rec evalCanvas (canvas: Canvas) : string =
 
 let eval (expr: Expr) : string = 
     let csz = CANVAS_SZ |> string
+    let scheme = 
+        match expr with
+        | Expression(_, scheme, _) -> scheme
+    let cs = evalScheme scheme
+    let n = cs.Length
+    let i = r.Next(n)
+    let c = string cs[i]
     "<svg width=\"" + csz + "\" height=\"" + csz + "\"" +
     " xmlns=\"http://www.w3.org/2000/svg\"" +
     " xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n" +
+    "<rect width=\"" + csz + "\" height=\"" + csz + "\"" +
+    " fill=\"" + c + "\" />" +
     (evalCanvas (evalExpr expr))
     + "</svg>\n"

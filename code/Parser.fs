@@ -12,6 +12,11 @@ open Combinator
  *  <color> ::= red | green | blue | purple
  *)
 
+let usage() =
+    printfn "Usage: dotnet run <filename.txt>"
+    printfn "A picture will be generated based on the instructions in the file"
+    exit 1
+
 let pad p = pbetween pws0 p pws0
 
 let pNum = (pmany1 pdigit) |>> (fun e -> List.fold (fun acc n -> acc + string n) "" e) |>> int
