@@ -103,9 +103,9 @@ Each program takes 3 parameters to specify the geometric abstract art a programm
 
 
 \begin{enumerate}[label=(\roman*)]
-\item There are 2 primitive types: shapes and max edges, which are both ints.
-\item Our program combines shapes into a connected image with no gaps.
-\item The types will be ints for num shapes and max edges, and algebraic data type of strings for the schemes, which is another ADT that can be a preset or user inputted. The user inputted colors are also an ADT of strings for the colors. 
+\item There are 3 primitive types: number of shapes and max edges, which are both ints, and color, which is a string.
+\item Our program produces an image filled with connected shapes, each painted with a color based on the color scheme, which is a combined form of 4 or more colors.
+\item The types are ints for num shapes and max edges, and algebraic data type of strings for the schemes, which is another ADT that can be a preset or user-inputted. The user-inputted colors are also an ADT of strings for the colors. 
 
 \item 
 
@@ -190,16 +190,19 @@ Each program takes 3 parameters to specify the geometric abstract art a programm
     \end{forest}
   \end{center}
 
-  \item The programs don't take any user input outside of the original program lines. They output svg files that when opened display a colored canvas containing the art piece. The evaluation would be done using svg. First a string of svg commands would be created when evaluating the tree, and that would be fed into a file which can be opened.
+  \item The programs don't take any user input outside of the original program lines. The programs output svg files that when opened display a colored canvas containing the art piece. The evaluation would be done using svg. First a string of svg commands would be created when evaluating the tree, and that would be fed into a file which can be opened.
 
-  Rough sketch of evaluation steps:
-  Take all the parameters. Then loop through the number of shapes. To start, choose a random color and a random number of edges from 3 to max edges. Then draw that shape in the top left corner. Then choose a random edge that is not on the edge of the canvas, a random color that was not just used, and another random number of edges, and draw another shape adjacent to the chosen edge from the first shape. Continue until all the shapes are drawn, making sure to remain inside the canvas. Then fill in the remaining parts of the canvas with random colors, ensuring that no adjacent shapes are the same color.
 
 
 \end{enumerate}
 
 \subsection{Limitations/Remaining Work}
-
+This is a minimally working version of our language, and here are limitations/items that need to be worked on further:
+\begin{enumerate}
+\item Currently, only the rainbow color scheme works
+\item We have to improve how the shapes are placed in the canvas so that no gaps/unfilled spaces remain
+\item We have to assign distinct colors for adjacent shapes
+\end{enumerate}
 
 % DO NOT DELETE ANYTHING BELOW THIS LINE
 \end{document}
