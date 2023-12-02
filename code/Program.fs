@@ -2,6 +2,7 @@
 open Evaluator
 open AST
 open System
+open Shapes
 
 [<EntryPoint>]
 let main args = 
@@ -19,3 +20,6 @@ let main args =
       | None ->
           printfn "Invalid program."
           1
+
+
+  

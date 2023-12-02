@@ -1,18 +1,18 @@
-<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="400" height="400" fill="Yellow" /><polygon fill="Green" points="142, 109 26, 348 312, 109 192, 234 210, 219 "/>
-<polygon fill="Orange" points="300, 316 252, 232 158, 24 241, 363 197, 108 "/>
-<polygon fill="Yellow" points="268, 114 303, 265 47, 90 68, 90 "/>
-<polygon fill="Orange" points="241, 101 142, 133 232, 192 249, 319 186, 117 "/>
-<polygon fill="Red" points="196, 91 243, 199 383, 12 "/>
-<polygon fill="Indigo" points="133, 265 384, 139 53, 87 181, 257 374, 275 "/>
-<polygon fill="Blue" points="156, 212 365, 327 349, 174 "/>
-<polygon fill="Yellow" points="83, 303 7, 262 76, 225 172, 367 "/>
-<polygon fill="Purple" points="331, 236 238, 18 392, 209 329, 86 180, 345 "/>
-<polygon fill="Indigo" points="164, 263 254, 246 302, 76 217, 284 363, 170 "/>
-<polygon fill="Indigo" points="242, 171 165, 277 234, 272 82, 365 "/>
-<polygon fill="Blue" points="140, 291 394, 270 59, 102 120, 198 "/>
-<polygon fill="Yellow" points="221, 182 210, 47 204, 283 "/>
-<polygon fill="Purple" points="328, 72 189, 65 109, 386 336, 237 81, 277 "/>
-<polygon fill="Red" points="256, 263 385, 114 138, 30 "/>
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="800" height="800" fill="rgb(148,0,211)" /><polygon fill="rgb(255,127,0)" points="194, 151 120, 59 144, 16 222, 41 179, 790 "/>
+<polygon fill="rgb(255,0,0)" points="180, 277 69, 319 163, 10 "/>
+<polygon fill="rgb(255,0,0)" points="309, 542 428, 484 476, 533 418, 620 69, 509 "/>
+<polygon fill="rgb(0,0,255)" points="554, 63 608, 16 666, 88 63, 580 "/>
+<polygon fill="rgb(0,0,255)" points="456, 306 423, 192 501, 155 591, 573 "/>
+<polygon fill="rgb(0,0,255)" points="112, 659 237, 655 263, 779 2, 799 "/>
+<polygon fill="rgb(255,127,0)" points="406, 443 408, 308 664, 450 "/>
+<polygon fill="rgb(0,0,255)" points="738, 401 734, 497 265, 176 "/>
+<polygon fill="rgb(0,0,255)" points="735, 703 701, 785 606, 744 781, 326 "/>
+<polygon fill="rgb(255,255,0)" points="646, 539 720, 598 691, 722 608, 720 540, 327 "/>
+<polygon fill="rgb(255,255,0)" points="742, 541 736, 675 290, 440 "/>
+<polygon fill="rgb(0,0,255)" points="194, 307 192, 204 721, 497 "/>
+<polygon fill="rgb(0,255,0)" points="75, 228 44, 95 175, 68 359, 725 "/>
+<polygon fill="rgb(0,0,255)" points="729, 669 823, 697 797, 784 419, 692 "/>
+<polygon fill="rgb(255,127,0)" points="139, 230 41, 206 43, 81 140, 65 344, 362 "/>
 </svg>
 

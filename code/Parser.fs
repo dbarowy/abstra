@@ -23,10 +23,10 @@ let pNum = (pmany1 pdigit) |>> (fun e -> List.fold (fun acc n -> acc + string n)
 let pShapes = pleft (pNum) (pstr " shapes, scheme: ")
 let pColor : Parser<Scheme>= 
     pmany1 (
-    (pstr "red" |>> (fun _ -> Red)) <|>
-    (pstr "green" |>> (fun _ -> Green)) <|>
-    (pstr "blue" |>> (fun _ -> Blue)) <|>
-    (pstr "purple" |>> (fun _ -> Purple))) |>> (fun l -> Colors(l))
+    (pstr "red " |>> (fun _ -> Red)) <|>
+    (pstr "green " |>> (fun _ -> Green)) <|>
+    (pstr "blue " |>> (fun _ -> Blue)) <|>
+    (pstr "purple " |>> (fun _ -> Purple))) |>> (fun l -> Colors(l))
 let pPreset : Parser<Scheme> = 
     (pstr "greyscale" |>> (fun _ -> Preset(Greyscale))) <|>
     (pstr "rainbow" |>> (fun _ -> Preset(Rainbow)))
