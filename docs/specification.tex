@@ -1,0 +1,218 @@
+\documentclass[10pt]{article}
+
+% Lines beginning with the percent sign are comments
+% This file has been commented to help you understand more about LaTeX
+
+% DO NOT EDIT THE LINES BETWEEN THE TWO LONG HORIZONTAL LINES
+
+%---------------------------------------------------------------------------------------------------------
+
+% Packages add extra functionality.
+\usepackage{times,graphicx,epstopdf,fancyhdr,amsfonts,amsthm,amsmath,algorithm,algorithmic,xspace,hyperref}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
+\usepackage{sect sty}	%For centering section headings
+\usepackage{enumerate}	%Allows more labeling options for enumerate environments 
+\usepackage{epsfig}
+\usepackage[space]{grffile}
+\usepackage{booktabs}
+\usepackage{forest}
+\usepackage{enumitem}   
+\usepackage{fancyvrb}
+
+% This will set LaTeX to look for figures in the same directory as the .tex file
+\graphicspath{.} % The dot means current directory.
+
+\pagestyle{fancy}
+
+\lhead{Final Project}
+\rhead{\today}
+\lfoot{CSCI 334: Principles of Programming Languages}
+\cfoot{\thepage}
+\rfoot{Fall 2023}
+
+% Some commands for changing header and footer format
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headwidth}{\textwidth}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% These let you use common environments
+\newtheorem{claim}{Claim}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{question}{Question}
+
+\setlength{\parindent}{0cm}
+
+
+%---------------------------------------------------------------------------------------------------------
+
+% DON'T CHANGE ANYTHING ABOVE HERE
+
+% Edit below as instructed
+
+\begin{document}
+  
+\section*{Language Specifications}
+
+Sammy Sasaki, Mico Mendoza
+
+\subsection{Introduction}
+
+Geometric abstraction is an abstract art form that primarily uses simple geometric shapes painted with flat colors and placed in non-illusionistic planar space. Many people enjoy geometric abstract art, but sometimes they can be hard to create or find, especially for people with little to no artistic skills. 
+
+This is a domain specific programming language that offers users a way to easily create geometric abstract art. It lets users create art that is customized to their own liking, in terms of color scheme, size, shapes, and other parameters.
+
+
+
+\subsection{Design Principles}
+
+The main guiding principles in this programming language are simplicity and usability. We want our language to be simple and easy to use, and give the user as much power as possible to create the art that they are envisioning for themselves. We designed our language so that the users have the power to easily customize the primary visual features of a geometric abstract art -- the 2D geometirc shapes and colors/color scheme. Other visual features that we are keeping in mind as we develop our language further are the number of edges for each shape, the relative sizes of the shape, the positions of the shape, the colors of adjacent shapes, the size of the canvas that we are filling up with shapes (and gaps between shapes), etc.  
+
+\subsection{Examples}
+
+\begin{verbatim}
+    5 shapes, scheme: greyscale, max 8 edges
+\end{verbatim}
+
+This should generate 5 shapes on a canvas colored shades of grey, each with between 3-8 edges.
+
+\begin{verbatim}
+    7 shapes, scheme: rainbow, max 6 edges
+\end{verbatim}
+
+This should generate 7 shapes on a canvas with colors from the rainbow, each with between 3-6 edges.
+
+\begin{verbatim}
+    2 shapes, scheme: red green blue purple , max 3 edges
+\end{verbatim}
+
+This should generate 2 shapes on a canvas, each colored one of red green blue, or purple, each with 3 edges.
+
+\subsection{Language Concepts}
+
+Each program takes 3 parameters to specify the geometric abstract art a programmer wants to create. The number of shapes and the number of maximum edges for any given shape are primitive types (int) in this language, while the color scheme is a combined form of the primitive type color (string), where a programmer can choose from preset color schemes or customize their own (must be 4 or more distinct colors).
+
+\subsection{Formal Syntax}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+<expr>   ::= <num> shapes, scheme: <scheme>, max <num> edges
+<num>    ::= <digit>+
+<digit>  ::= 0 | ... | 9
+<scheme> ::= <preset>
+          | <color>\textsuperscript{4+}
+<color>  ::= red | orange | yellow | green | blue | indigo | purple
+<preset> ::= greyscale | rainbow
+\end{Verbatim}
+
+
+Example ASTs: 
+
+\begin{center}
+    \begin{forest}
+      [$\langle expr\rangle$
+        [$\langle num\rangle$
+          [$5$
+          ]
+        ]
+        [{shapes, }]
+        [{scheme: }]
+        [$\langle scheme \rangle$
+          [$\langle preset\rangle$
+            [greyscale]
+          ]
+        ]
+        [{, max}]
+        [$\langle num\rangle$
+          [$8$
+          ]
+        ]
+        [{ edges}]
+      ]
+    \end{forest}
+  \end{center}
+
+\begin{center}
+    \begin{forest}
+      [$\langle expr\rangle$
+        [$\langle num\rangle$
+          [$7$
+          ]
+        ]
+        [{shapes, }]
+        [{scheme: }]
+        [$\langle scheme \rangle$
+          [$\langle preset\rangle$
+            [rainbow]
+          ]
+        ]
+        [{, max}]
+        [$\langle num\rangle$
+          [$6$
+          ]
+        ]
+        [{ edges}]
+      ]
+    \end{forest}
+  \end{center}
+
+\begin{center}
+    \begin{forest}
+      [$\langle expr\rangle$
+        [$\langle num\rangle$
+          [$2$
+          ]
+        ]
+        [{shapes, }]
+        [{scheme: }]
+        [$\langle scheme \rangle$
+          [$\langle color\rangle$
+            [red]
+          ]
+          [$\langle color\rangle$
+            [green]
+          ]
+          [$\langle color\rangle$
+            [blue]
+          ]
+          [$\langle color\rangle$
+            [purple]
+          ]
+        ]
+        [{, max}]
+        [$\langle num\rangle$
+          [$3$
+          ]
+        ]
+        [{ edges}]
+      ]
+    \end{forest}
+  \end{center}
+
+\subsection{Semantics}
+
+
+\begin{enumerate}[label=(\roman*)]
+\item num has an abstract syntax of Num of int, and is an int, represented by Int32.
+\item Color is abstract data type which can be one of many predetermined color options. This is used to specify the colors of shapes and the background.
+\item Preset is an abstract data type which currently has two options: greyscale or rainbow. This is one option for specifying the colors used in a particular artwork.
+\item Scheme is an abstract data type of either a Preset of Preset, or a Colors of Color List, a list of 4 or more colors. This determines the color scheme of an artwork.
+\item Expr has an abstract syntax of Expression of int * Scheme * int. This encapsulates one piece of art, specifying the number of shapes, the colors to be used, and the max number of edges per shape. It has precedence 1 and is left associative.
+
+  \item The programs don't take any user input outside of the original program lines. The programs output svg files that when opened display a colored canvas containing the art piece. The evaluation would be done using svg. First a string of svg commands would be created when evaluating the tree, and that would be fed into a file which can be opened.
+
+
+
+\end{enumerate}
+
+\subsection{Limitations/Remaining Work}
+Here are limitations/items that need to be worked on further:
+\begin{enumerate}
+\item We have to assign distinct colors for adjacent shapes
+\item We would like to have a better way of generating shapes, perhaps using a forbidden zone or growing the shapes from each other, the make them more spread out and similar to our original vision.
+\item We are considering adding more customization options for the program writer, perhaps regarding edge lengths, or the ability to explicitly add shapes in certain positions.
+\end{enumerate}
+
+% DO NOT DELETE ANYTHING BELOW THIS LINE
+\end{document}
