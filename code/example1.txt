@@ -1,0 +1,1 @@
+5 shapes, scheme: greyscale, max 8 edges

@@ -29,7 +29,7 @@ let evalColor (color: Color) : string =
 let checkExpr (expr: Expr) : bool =
     match expr with
     | Expression(n, s, e) ->
-        n > 0 && e > 3
+        n > 0 && e >= 3
 
 let rec evalScheme (scheme: Scheme) : Color list =
     match scheme with
@@ -67,7 +67,7 @@ let rec evalCanvas (canvas: Canvas) : string =
 
 let eval (expr: Expr) : string = 
     if not (checkExpr expr) then
-        printfn "invalid program"
+        printfn "Invalid program"
         ""
     else 
         let csz = CANVAS_SZ |> string
