@@ -5,10 +5,14 @@ open Shapes
 
 // better way of building shapes (growing or forbidden zone)
 // prevent color overlay (check all points in new shape and see if already colored)
+// Num data type?
 
 // done:
 // should check values are valid
 // make a minimum angle bw points(will have to construct shape point by point)
+
+// questions:
+// how to do color check??
 
 let evalColor (color: Color) : string =
     match color with

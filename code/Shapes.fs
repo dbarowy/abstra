@@ -5,6 +5,8 @@ open MathNet.Numerics.Distributions
 
 let r = new Random()
 let CANVAS_SZ = 800
+let avgLen = 200
+let lenDist = new Normal(avgLen, 20)
 
 
 // want angle to be between avgAngle / 3 and 180
@@ -18,7 +20,6 @@ let rec generateNextPoint (midPt : Coordinate) (A : Coordinate) (n: int): Coordi
     // in radians
     let avgAngle : float = ((float (n - 2)) * 180.0 / float n) * Math.PI / 180.0
     let angleDist = new Normal(avgAngle, 0.4)
-    let lenDist = new Normal(100, 20)
     let ang = angleDist.Sample()
     let len = lenDist.Sample()
     if (ang > (avgAngle / 3.0) && ang < (Math.PI)) && (len > 0 && len < CANVAS_SZ) then
@@ -29,18 +30,12 @@ let rec generateNextPoint (midPt : Coordinate) (A : Coordinate) (n: int): Coordi
     else
         generateNextPoint midPt A n
 
-
-
-let rec generateLastPoint (pA) (pB) (nA) (nB) (n)= 
-    let x = r.Next(CANVAS_SZ)
-    let y = r.Next(CANVAS_SZ)
-    let newPt = { x = x; y = y }
-    let avgAngle : float = ((float (n - 2)) * 180.0 / float n) * (Math.PI / 180.0)
-    if (checkAngle pB pA newPt n) &&
-        (checkAngle nB nA newPt n) then
-        newPt
-    else 
-        generateLastPoint pA pB nA nB n
+let generateSecondPoint (A : Coordinate) : Coordinate =
+    let angle = float(r.Next(0, 180)) * Math.PI / 180.0
+    let len = lenDist.Sample();
+    let newX = A.x + int(len * cos(angle))
+    let newY = A.y + int(len * cos(angle))
+    { x = newX; y = newY }
 
 let rec generatePoints (e: int) (totalE): Coordinate list = 
     match e with
@@ -48,14 +43,8 @@ let rec generatePoints (e: int) (totalE): Coordinate list =
     | 1 -> 
         { x = r.Next(CANVAS_SZ); y = r.Next(CANVAS_SZ); } :: generatePoints (e - 1) (totalE)
     | 2 -> 
-        { x = r.Next(CANVAS_SZ); y = r.Next(CANVAS_SZ); } :: generatePoints (e - 1) (totalE)
-    // | _ when e = totalE ->
-    //     let otherPts = generatePoints (e - 1) (totalE)
-    //     let prevLineB = otherPts[0]
-    //     let prevLineA = otherPts[1]
-    //     let nextLineB = otherPts[totalE - 2]
-    //     let nextLineA = otherPts[totalE - 3]
-    //     (generateLastPoint prevLineA prevLineB nextLineA nextLineB totalE) :: otherPts
+        let prevPts = generatePoints (1) (totalE)
+        (generateSecondPoint prevPts[0]) :: prevPts
     | n -> 
         let prevPts = generatePoints (e - 1) (totalE)
         let midPt = prevPts[0]
