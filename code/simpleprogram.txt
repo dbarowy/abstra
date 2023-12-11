@@ -1,1 +1,1 @@
-15 shapes, scheme: rainbow, max 6 edges
+50 shapes, scheme: rainbow, max 6 edges

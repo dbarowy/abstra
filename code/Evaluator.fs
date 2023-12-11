@@ -3,16 +3,23 @@ open AST
 open System
 open Shapes
 
-// better way of building shapes (growing or forbidden zone)
 // prevent color overlay (check all points in new shape and see if already colored)
 // Num data type?
 
 // done:
 // should check values are valid
 // make a minimum angle bw points(will have to construct shape point by point)
+// make unique background color
+// fix parsing of color lists
 
 // questions:
 // how to do color check??
+// generate points first then randomly add lines then do color check
+// maintain list of shapes
+// as you build each shape, check every shape below it
+// if adjacent(one of either shape's points is in the other)
+// if covers(all previous shape within new shape), ignore
+// if no colors left, then just pick any color
 
 let evalColor (color: Color) : string =
     match color with

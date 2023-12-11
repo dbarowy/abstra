@@ -1,18 +1,12 @@
 <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="800" height="800" fill="rgb(0,255,0)" /><polygon fill="rgb(0,0,255)" points="159, 731 225, 511 403, 689 "/>
-<polygon fill="rgb(148,0,211)" points="-49, 361 -285, 320 -243, 120 -121, 5 42, 168 "/>
-<polygon fill="rgb(148,0,211)" points="232, 235 309, 406 215, 312 "/>
-<polygon fill="rgb(148,0,211)" points="434, 443 332, 585 152, 405 "/>
-<polygon fill="rgb(75,0,130)" points="-61, 700 68, 550 123, 605 "/>
-<polygon fill="rgb(75,0,130)" points="1029, 177 1061, 397 1003, 609 794, 621 655, 482 "/>
-<polygon fill="rgb(255,127,0)" points="319, 9 495, 115 347, 286 184, 123 "/>
-<polygon fill="rgb(255,127,0)" points="537, 574 319, 565 233, 404 438, 294 552, 408 "/>
-<polygon fill="rgb(255,0,0)" points="431, 663 272, 845 146, 719 "/>
-<polygon fill="rgb(255,127,0)" points="-239, 703 -199, 509 12, 720 "/>
-<polygon fill="rgb(255,255,0)" points="-272, 950 -349, 797 -240, 630 -40, 583 31, 654 "/>
-<polygon fill="rgb(0,0,255)" points="586, 947 389, 969 349, 796 473, 650 606, 783 "/>
-<polygon fill="rgb(255,0,0)" points="604, 325 460, 219 593, 72 728, 207 "/>
-<polygon fill="rgb(255,0,0)" points="279, 256 394, 110 511, 227 "/>
-<polygon fill="rgb(148,0,211)" points="178, 574 -26, 525 -47, 299 130, 172 298, 340 "/>
+<rect width="800" height="800" fill="rgb(0,255,0)" /><polygon fill="rgb(0,0,255)" points="291, 90 399, 203 253, 340 69, 156 "/>
+<polygon fill="rgb(0,0,255)" points="100, 169 232, 306 81, 434 57, 410 "/>
+<polygon fill="rgb(0,0,255)" points="-107, 300 -148, 90 83, 71 172, 160 "/>
+<polygon fill="rgb(255,0,0)" points="330, 441 299, 651 199, 551 "/>
+<polygon fill="rgb(148,0,211)" points="594, -2 595, 196 431, 268 322, 159 "/>
+<polygon fill="rgb(0,0,255)" points="512, 241 578, 45 788, 255 "/>
+<polygon fill="rgb(148,0,211)" points="826, 166 787, 370 619, 202 "/>
+<polygon fill="rgb(0,0,255)" points="112, 907 -38, 815 48, 662 118, 732 "/>
+<polygon fill="rgb(255,0,0)" points="-4, 129 29, -58 282, 195 "/>
 </svg>
 
