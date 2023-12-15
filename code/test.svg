@@ -1,23 +1,33 @@
 <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="800" height="800" fill="rgb(0,0,255)" /><polygon fill="rgb(255,0,0)" points="595, 604 992, 795 785, 1136 364, 715 "/>
-<polygon fill="rgb(255,127,0)" points="474, 981 84, 878 82, 483 480, 332 740, 592 "/>
-<polygon fill="rgb(148,0,211)" points="-65, 977 132, 630 138, 636 "/>
-<polygon fill="rgb(255,0,0)" points="394, 91 324, 465 296, 437 "/>
-<polygon fill="rgb(0,255,0)" points="162, 388 245, -14 443, 184 "/>
-<polygon fill="rgb(75,0,130)" points="483, 958 610, 581 638, 609 "/>
-<polygon fill="rgb(255,255,0)" points="570, 635 206, 773 79, 400 412, 138 771, 497 "/>
-<polygon fill="rgb(255,255,0)" points="-130, 496 -486, 307 -206, -6 127, 327 "/>
-<polygon fill="rgb(255,255,0)" points="1210, 636 1161, 1016 763, 618 "/>
-<polygon fill="rgb(148,0,211)" points="-14, 381 -216, 75 117, -218 469, 134 "/>
-<polygon fill="rgb(75,0,130)" points="41, 559 113, 151 427, 465 "/>
-<polygon fill="rgb(0,255,0)" points="780, 244 670, 626 430, 386 "/>
-<polygon fill="rgb(148,0,211)" points="849, 533 767, 901 390, 524 "/>
-<polygon fill="rgb(255,0,0)" points="549, 31 790, 326 478, 535 207, 264 "/>
-<polygon fill="rgb(75,0,130)" points="-440, 623 -632, 284 -322, 49 54, 425 "/>
-<polygon fill="rgb(148,0,211)" points="856, 22 1220, -107 1411, 254 1071, 465 695, 89 "/>
-<polygon fill="rgb(0,255,0)" points="1013, 453 978, 837 728, 587 "/>
-<polygon fill="rgb(75,0,130)" points="1059, 483 903, 854 535, 486 "/>
-<polygon fill="rgb(0,255,0)" points="71, 1279 -269, 1088 -230, 660 100, 441 145, 486 "/>
-<polygon fill="rgb(255,255,0)" points="332, 492 101, 164 340, -163 564, 61 "/>
+<rect width="800" height="800" fill="rgb(75,0,130)" /><polygon fill="rgb(255,255,0)" points="329, 539 89, 259 415, 21 691, 297 "/>
+<polygon fill="rgb(255,0,0)" points="-343, 353 -238, -23 120, 335 "/>
+<polygon fill="rgb(255,0,0)" points="554, -340 855, -92 543, 162 510, 129 "/>
+<polygon fill="rgb(255,255,0)" points="739, -250 636, 112 600, 76 "/>
+<polygon fill="rgb(148,0,211)" points="92, 127 432, 275 257, 623 251, 617 "/>
+<polygon fill="rgb(0,0,255)" points="505, -84 730, 285 461, 569 90, 198 "/>
+<polygon fill="rgb(255,127,0)" points="396, 34 338, 417 40, 119 "/>
+<polygon fill="rgb(0,255,0)" points="741, -151 878, 227 536, 431 265, 160 "/>
+<polygon fill="rgb(255,0,0)" points="1145, 427 1427, 659 1118, 941 757, 580 "/>
+<polygon fill="rgb(0,0,255)" points="1015, 241 843, 615 680, 452 "/>
+<polygon fill="rgb(255,0,0)" points="748, 233 634, 609 202, 177 "/>
+<polygon fill="rgb(255,127,0)" points="435, 500 229, 184 553, -39 778, 186 "/>
+<polygon fill="rgb(75,0,130)" points="488, 193 740, 574 444, 803 27, 386 "/>
+<polygon fill="rgb(148,0,211)" points="-311, 909 -597, 618 -259, 372 139, 770 "/>
+<polygon fill="rgb(0,255,0)" points="-59, 729 -155, 307 159, 147 334, 322 "/>
+<polygon fill="rgb(255,0,0)" points="112, 408 189, 51 611, 473 "/>
+<polygon fill="rgb(255,0,0)" points="179, -249 496, 14 338, 343 331, 336 "/>
+<polygon fill="rgb(255,127,0)" points="376, 931 502, 546 739, 783 "/>
+<polygon fill="rgb(148,0,211)" points="1308, 319 1049, 653 758, 362 "/>
+<polygon fill="rgb(255,127,0)" points="-473, 673 -370, 279 33, 682 "/>
+<polygon fill="rgb(0,0,255)" points="139, 187 353, 509 139, 808 82, 751 "/>
+<polygon fill="rgb(255,127,0)" points="-59, 482 123, 120 333, 330 "/>
+<polygon fill="rgb(255,255,0)" points="729, 366 575, 729 142, 296 "/>
+<polygon fill="rgb(255,0,0)" points="292, 798 -42, 641 217, 310 478, 571 "/>
+<polygon fill="rgb(255,255,0)" points="362, 524 614, 796 387, 1146 20, 779 "/>
+<polygon fill="rgb(0,0,255)" points="-473, 1014 -575, 647 -252, 421 116, 789 "/>
+<polygon fill="rgb(0,255,0)" points="269, 786 156, 405 467, 271 607, 411 "/>
+<polygon fill="rgb(0,255,0)" points="752, 304 1112, 442 873, 760 634, 521 "/>
+<polygon fill="rgb(255,0,0)" points="671, 176 930, 513 685, 813 564, 692 "/>
+<polygon fill="rgb(148,0,211)" points="378, -106 746, 25 555, 383 330, 158 "/>
 </svg>
 
