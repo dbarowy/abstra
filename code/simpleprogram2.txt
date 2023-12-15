@@ -1,1 +1,1 @@
-9 shapes, scheme: red blue purple green , max 5 edges
+9 shapes, scheme: red blue purple green, max 5 edges

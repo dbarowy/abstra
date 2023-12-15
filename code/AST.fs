@@ -26,5 +26,6 @@ type Scheme =
 type Expr = Expression of int * Scheme * int
 
 type Coordinate = { x: int; y: int }
+type Line = { p1: Coordinate; p2: Coordinate }
 type Shape = { pts: Coordinate list; color: Color }
 type Canvas = Shape list

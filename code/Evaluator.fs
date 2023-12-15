@@ -3,16 +3,25 @@ open AST
 open System
 open Shapes
 
-// better way of building shapes (growing or forbidden zone)
 // prevent color overlay (check all points in new shape and see if already colored)
 // Num data type?
 
 // done:
 // should check values are valid
 // make a minimum angle bw points(will have to construct shape point by point)
+// make unique background color
+// fix parsing of color lists
 
 // questions:
 // how to do color check??
+// generate points first then randomly add lines then do color check
+// maintain list of shapes
+// as you build each shape, check every shape below it
+// if adjacent(one of either shape's points is in the other)
+// if covers(all previous shape within new shape), ignore
+// if no colors left, then just pick any color
+
+let mutable shapes: Shape List = []
 
 let evalColor (color: Color) : string =
     match color with
@@ -42,17 +51,34 @@ let rec evalScheme (scheme: Scheme) : Color list =
     | Colors([]) -> []
     | Colors(x::xs) -> x :: evalScheme (Colors(xs))
 
+let rec validColors (colors: Color List) (bColors: Color List) = 
+    match colors.Length with
+    | 0 -> []
+    | n -> 
+        let color = colors[0]
+        if (not (List.contains color bColors)) then
+            color::(validColors colors[1..] bColors)
+        else
+            validColors colors[1..] bColors
 
+let getColorList (idealColors: Color List) (scheme: Scheme): Color List = 
+    if idealColors.Length = 0 then
+        evalScheme scheme
+    else
+        idealColors
 let rec createShape (maxE: int) (scheme: Scheme) (bc: Color): Shape = 
-    let cs = evalScheme scheme
+    let numEdges = r.Next(3, maxE)
+    let pts = generatePoints numEdges numEdges
+    let placeholder = { pts = pts; color = Red }
+    let bcs: Color List = forbiddenColors placeholder shapes [bc]
+    let cs = getColorList (validColors (evalScheme scheme) (bcs)) scheme
     let n = cs.Length
     let i = r.Next(n)
     let c = cs[i]
-    if c <> bc then
-        let numEdges = r.Next(3, maxE)
-        { pts = (generatePoints numEdges numEdges); color = c }
-    else
-        createShape maxE scheme bc
+    let newShape = { pts = pts; color = c }
+    shapes <- newShape::shapes
+    newShape
+    
 
 let rec evalExpr (expr: Expr) (bc: Color): Canvas = 
     match expr with
