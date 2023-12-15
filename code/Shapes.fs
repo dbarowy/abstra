@@ -5,7 +5,7 @@ open MathNet.Numerics.Distributions
 
 let r = new Random()
 let CANVAS_SZ = 800
-let avgLen = 200
+let avgLen = 400
 let lenDist = new Normal(avgLen, 20)
 
 let direction (a: Coordinate) (b: Coordinate) (c: Coordinate): int = 
@@ -27,48 +27,36 @@ let intersect (lA: Line) (lB: Line): bool =
     else 
         false
 
-let rec countIntersections (l: Line) (pts: Coordinate List): int =
-    match pts.Length with
-    | 1 -> 0
-    | n -> 
-        if (intersect l {p1 = pts[0]; p2 = pts[1]}) then
-            1 + countIntersections l pts[1..]
-        else
-            countIntersections l pts[1..]
-
-let inShape (pt: Coordinate) (shape: Shape): bool =
-    let exline = { p1 = pt; p2 = { x = 9999; y = pt.y } }
-    let count = countIntersections exline shape.pts
-    // When count is odd
-    count % 2 = 1
-
-let rec isAdjacent (pts: Coordinate List) (shape: Shape): bool = 
+let rec lineIntersetsWithShape (line: Line) (pts: Coordinate List): bool = 
     match pts.Length with
     | 0 -> false
+    | 1 -> false
     | n -> 
-        if (inShape pts[0] shape) then
+        let line2 = { p1 = pts[0]; p2 = pts[1] }
+        if (intersect line line2) then
             true
         else
-            isAdjacent pts[1..] shape
+            lineIntersetsWithShape line pts[1..]
 
-let rec isWithin (pts: Coordinate List) (shape: Shape): bool =
-    match pts.Length with
+let rec isAdjacent (ptsA: Coordinate List) (ptsB: Coordinate List): bool = 
+    match ptsA.Length with
     | 0 -> false
-    | 1 -> inShape pts[0] shape
+    | 1 -> false
     | n -> 
-        let pt = pts[0]
-        if (inShape pt shape) then
-            isWithin pts[1..] shape
+        let line = { p1 = ptsA[0]; p2 = ptsA[1] }
+        if (lineIntersetsWithShape line ptsB) then
+            true
         else
-            false
+            isAdjacent ptsA[1..] ptsB
+        
 
 let rec forbiddenColors (newShape: Shape) (shapes: Shape List) (forbiddenCs: Color List): Color List = 
     match shapes.Length with
     | 0 -> forbiddenCs
     | n -> 
         let shape = shapes[0]
-        if (isAdjacent newShape.pts shape || isAdjacent shape.pts newShape) && (not (List.contains shape.color forbiddenCs)) then
-            shape.color :: forbiddenColors newShape shapes[1..] (shape.color::forbiddenCs)
+        if (isAdjacent ((newShape.pts[(newShape.pts.Length - 1)])::newShape.pts) ((shape.pts[((shape.pts).Length - 1)])::shape.pts)) && (not (List.contains shape.color forbiddenCs)) then
+            shape.color :: forbiddenColors newShape shapes[1..] (forbiddenCs)
         else
             forbiddenColors newShape shapes[1..] forbiddenCs
 
@@ -83,7 +71,7 @@ let checkAngle (midPt) (A) (B) (n): bool =
 let rec generateNextPoint (midPt : Coordinate) (A : Coordinate) (n: int): Coordinate =
     // in radians
     let avgAngle : float = ((float (n - 2)) * 180.0 / float n) * Math.PI / 180.0
-    let angleDist = new Normal(avgAngle, 0.4)
+    let angleDist = new Normal(avgAngle, 0.2)
     let ang = angleDist.Sample()
     let len = lenDist.Sample()
     if (ang > (avgAngle / 3.0) && ang < (Math.PI)) && (len > 0 && len < CANVAS_SZ) then

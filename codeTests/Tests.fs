@@ -9,14 +9,11 @@ open Shapes
 type TestClass () =
 
     [<TestMethod>]
-    member this.TestInShape () =
-        let pts = [ { x=2; y=2 }; { x=3; y=10 }; { x=9; y=8 }; { x = 11; y=4} ]
-        let shape: Shape = { color = Red; pts =pts }
-        let ptIn = { x=4; y=5 }
-        Assert.IsTrue(inShape ptIn shape)
-        let ptLeft = { x=1; y=5 }
-        Assert.IsFalse(inShape ptLeft shape)
-        let ptAbove = {x = 5; y = 20}
-        Assert.IsFalse(inShape ptAbove shape)
+    member this.TestInIntersects () =
+        let line1 = {p1 = { x=2; y=2 }; p2 = { x=4; y=4 }}
+        let line2 = {p1 = { x=3; y=2 }; p2 = { x=3; y=4 }}
+        let line3 = {p1 = { x=5; y = 5 }; p2 = { x=5; y=10 }}
+        Assert.IsTrue(intersect line1 line2)
+        Assert.IsFalse(intersect line1 line3)
 
 

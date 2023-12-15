@@ -71,7 +71,6 @@ let rec createShape (maxE: int) (scheme: Scheme) (bc: Color): Shape =
     let pts = generatePoints numEdges numEdges
     let placeholder = { pts = pts; color = Red }
     let bcs: Color List = forbiddenColors placeholder shapes [bc]
-    printfn "%A" bcs
     let cs = getColorList (validColors (evalScheme scheme) (bcs)) scheme
     let n = cs.Length
     let i = r.Next(n)
