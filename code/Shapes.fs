@@ -49,7 +49,7 @@ let rec isAdjacent (ptsA: Coordinate List) (ptsB: Coordinate List): bool =
         else
             isAdjacent ptsA[1..] ptsB
         
-
+        
 let rec forbiddenColors (newShape: Shape) (shapes: Shape List) (forbiddenCs: Color List): Color List = 
     match shapes.Length with
     | 0 -> forbiddenCs
