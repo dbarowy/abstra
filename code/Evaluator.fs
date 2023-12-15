@@ -21,6 +21,8 @@ open Shapes
 // if covers(all previous shape within new shape), ignore
 // if no colors left, then just pick any color
 
+let mutable shapes: Shape List = []
+
 let evalColor (color: Color) : string =
     match color with
     | Red -> "rgb(255,0,0)"
@@ -49,17 +51,35 @@ let rec evalScheme (scheme: Scheme) : Color list =
     | Colors([]) -> []
     | Colors(x::xs) -> x :: evalScheme (Colors(xs))
 
+let rec validColors (colors: Color List) (bColors: Color List) = 
+    match colors.Length with
+    | 0 -> []
+    | n -> 
+        let color = colors[0]
+        if (not (List.contains color bColors)) then
+            color::(validColors colors[1..] bColors)
+        else
+            validColors colors[1..] bColors
 
+let getColorList (idealColors: Color List) (scheme: Scheme): Color List = 
+    if idealColors.Length = 0 then
+        evalScheme scheme
+    else
+        idealColors
 let rec createShape (maxE: int) (scheme: Scheme) (bc: Color): Shape = 
-    let cs = evalScheme scheme
+    let numEdges = r.Next(3, maxE)
+    let pts = generatePoints numEdges numEdges
+    let placeholder = { pts = pts; color = Red }
+    let bcs: Color List = forbiddenColors placeholder shapes [bc]
+    printfn "%A" bcs
+    let cs = getColorList (validColors (evalScheme scheme) (bcs)) scheme
     let n = cs.Length
     let i = r.Next(n)
     let c = cs[i]
-    if c <> bc then
-        let numEdges = r.Next(3, maxE)
-        { pts = (generatePoints numEdges numEdges); color = c }
-    else
-        createShape maxE scheme bc
+    let newShape = { pts = pts; color = c }
+    shapes <- newShape::shapes
+    newShape
+    
 
 let rec evalExpr (expr: Expr) (bc: Color): Canvas = 
     match expr with

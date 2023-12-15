@@ -1,12 +1,23 @@
+<!-- [Blue]
+[Blue]
+[Blue]
+[Blue]
+[Blue]
+[Green; Green; Blue]
+[Red; Green; Purple; Purple; Green; Red; Blue]
+[Purple; Purple; Blue]
+[Blue]
+[Green; Green; Blue] -->
 <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="800" height="800" fill="rgb(0,255,0)" /><polygon fill="rgb(0,0,255)" points="291, 90 399, 203 253, 340 69, 156 "/>
-<polygon fill="rgb(0,0,255)" points="100, 169 232, 306 81, 434 57, 410 "/>
-<polygon fill="rgb(0,0,255)" points="-107, 300 -148, 90 83, 71 172, 160 "/>
-<polygon fill="rgb(255,0,0)" points="330, 441 299, 651 199, 551 "/>
-<polygon fill="rgb(148,0,211)" points="594, -2 595, 196 431, 268 322, 159 "/>
-<polygon fill="rgb(0,0,255)" points="512, 241 578, 45 788, 255 "/>
-<polygon fill="rgb(148,0,211)" points="826, 166 787, 370 619, 202 "/>
-<polygon fill="rgb(0,0,255)" points="112, 907 -38, 815 48, 662 118, 732 "/>
-<polygon fill="rgb(255,0,0)" points="-4, 129 29, -58 282, 195 "/>
+<rect width="800" height="800" fill="rgb(0,0,255)" /><polygon fill="rgb(0,255,0)" points="166, 313 320, 200 436, 316 "/>
+<polygon fill="rgb(148,0,211)" points="921, 513 848, 705 633, 490 "/>
+<polygon fill="rgb(0,255,0)" points="366, 896 378, 693 449, 764 "/>
+<polygon fill="rgb(0,255,0)" points="136, 475 189, 262 406, 479 "/>
+<polygon fill="rgb(0,255,0)" points="936, 722 824, 866 669, 711 "/>
+<polygon fill="rgb(255,0,0)" points="321, 414 324, 618 233, 527 "/>
+<polygon fill="rgb(0,0,255)" points="713, 597 753, 421 756, 424 "/>
+<polygon fill="rgb(255,0,0)" points="1044, 387 917, 544 741, 368 "/>
+<polygon fill="rgb(255,0,0)" points="428, 567 500, 367 693, 560 "/>
+<polygon fill="rgb(148,0,211)" points="563, 711 411, 861 258, 708 "/>
 </svg>
 
